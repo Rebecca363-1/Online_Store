@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.99" prefHeight="569.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmployeePage">
+   <left>
+      <AnchorPane prefHeight="377.0" prefWidth="156.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9e2200" height="583.0" layoutX="-44.0" layoutY="-10.0" stroke="BLACK" strokeType="INSIDE" width="265.0" />
+            <Label layoutX="31.0" layoutY="14.0" text="Employee " textFill="WHITE">
+               <font>
+                  <Font name="Century" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="48.0" text="Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="Century" size="22.0" />
+               </font>
+            </Label>
+            <Button layoutX="-1.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleAddItem" prefHeight="40.0" prefWidth="222.0" text="Add Item" />
+            <Button fx:id="customersButton" layoutX="-1.0" layoutY="344.0" mnemonicParsing="false" onAction="#handleShowCustomers" prefHeight="40.0" prefWidth="222.0" text="Customers Account" />
+            <Button fx:id="orderButton" layoutX="-6.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleOrders" prefHeight="40.0" prefWidth="227.0" text="Orders Placed" />
+            <Label layoutX="5.0" layoutY="162.0" text="Enter id:" textFill="WHITE" />
+            <Label layoutX="5.0" layoutY="206.0" text="Enter name:" textFill="WHITE" />
+            <Label layoutX="5.0" layoutY="249.0" text="Enter price:" textFill="WHITE" />
+            <Label layoutX="4.0" layoutY="291.0" text="Quantity:" textFill="WHITE" />
+            <TextField fx:id="item_idTF" layoutX="80.0" layoutY="158.0" prefHeight="25.0" prefWidth="121.0" />
+            <TextField fx:id="item_nameTF" layoutX="80.0" layoutY="202.0" prefHeight="25.0" prefWidth="121.0" />
+            <TextField fx:id="item_priceTF" layoutX="80.0" layoutY="245.0" prefHeight="25.0" prefWidth="121.0" />
+            <TextField fx:id="quantityTF" layoutX="80.0" layoutY="287.0" prefHeight="25.0" prefWidth="121.0" />
+            <Button fx:id="couponsButton" layoutX="-6.0" layoutY="502.0" mnemonicParsing="false" onAction="#handleCoupons" prefHeight="40.0" prefWidth="227.0" text="Coupons" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="employeeTable" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="item_id" prefWidth="114.0" text="item_id" />
+                <TableColumn fx:id="item_name" prefWidth="233.0" text="item_name" />
+                  <TableColumn fx:id="item_price" prefWidth="135.0" text="item_price" />
+                  <TableColumn fx:id="quantity_in_stock" prefWidth="123.0" text="quantity_in_stock" />
+              </columns>
+            </TableView>
+            <TableView fx:id="customer_table" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="customer_id" prefWidth="76.0" text="customer_id" />
+                <TableColumn fx:id="customer_name" prefWidth="113.0" text="customer_name" />
+                  <TableColumn fx:id="customer_username" prefWidth="127.0" text="customer_username" />
+                  <TableColumn fx:id="customer_password" prefWidth="134.0" text="customer_password" />
+                  <TableColumn fx:id="address" prefWidth="155.0" text="address" />
+              </columns>
+            </TableView>
+            <TableView fx:id="order_table" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="order_id" prefWidth="87.0" text="order_id" />
+                <TableColumn fx:id="customer_id_order" prefWidth="107.0" text="customer_id" />
+                  <TableColumn fx:id="order_date" prefWidth="220.0" text="order_date" />
+                  <TableColumn fx:id="coupon_code" prefWidth="191.0" text=" coupon_code" />
+              </columns>
+            </TableView>
+            <TableView fx:id="couponTable" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="coupon_code1" prefWidth="175.0" text="coupon_code" />
+                <TableColumn fx:id="discount_percent" prefWidth="213.0" text="discount_percent" />
+                  <TableColumn fx:id="expiration_date" prefWidth="217.0" text="experation_date" />
+              </columns>
+            </TableView>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
